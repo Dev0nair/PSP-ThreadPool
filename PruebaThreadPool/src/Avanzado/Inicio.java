@@ -52,6 +52,7 @@ public class Inicio {
         
         while(!executorPool.isTerminated()) {} // esperamos a que se terminen
         
+        Thread.sleep(1500);
         monitor.shutdown(); // paramos el monitor
         
     }

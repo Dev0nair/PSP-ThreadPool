@@ -27,13 +27,13 @@ public class MyMonitorThread implements Runnable
         while(run){
                 System.out.println(
                     String.format("[monitor] [%d/%d] Active: %d, Completed: %d, Task: %d, isShutdown: %s, isTerminated: %s",
-                        this.executor.getPoolSize(),
-                        this.executor.getCorePoolSize(),
-                        this.executor.getActiveCount(),
-                        this.executor.getCompletedTaskCount(),
-                        this.executor.getTaskCount(),
-                        this.executor.isShutdown(),
-                        this.executor.isTerminated()));
+                        this.executor.getPoolSize(), // numero de procesos dentro del pool
+                        this.executor.getCorePoolSize(), // numero de procesos que pueden corren a la par
+                        this.executor.getActiveCount(), // numero de procesos activos en el hilo
+                        this.executor.getCompletedTaskCount(), // numero de procesos completados
+                        this.executor.getTaskCount(), // numero de proceso que se pueden ejecutar en este pool segun el tamaño del pool mas el tamaño de la lista de espera
+                        this.executor.isShutdown(), // si esta apagado
+                        this.executor.isTerminated())); // si ha terminado todo
                 try {
                     Thread.sleep(seconds*1000);
                 } catch (InterruptedException e) {
