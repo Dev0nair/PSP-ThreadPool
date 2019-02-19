@@ -28,7 +28,7 @@ public class MyMonitorThread implements Runnable
                 System.out.println(
                     String.format("[monitor] [%d/%d] Active: %d, Completed: %d, Task: %d, isShutdown: %s, isTerminated: %s",
                         this.executor.getPoolSize(), // numero de procesos dentro del pool
-                        this.executor.getCorePoolSize(), // numero de procesos que pueden corren a la par
+                        this.executor.getCorePoolSize(), // numero de procesos principales que se mantienen en el pool
                         this.executor.getActiveCount(), // numero de procesos activos en el hilo
                         this.executor.getCompletedTaskCount(), // numero de procesos completados
                         this.executor.getTaskCount(), // numero de proceso que se pueden ejecutar en este pool segun el tamaño del pool mas el tamaño de la lista de espera
